@@ -1,5 +1,5 @@
 //back End Code
-var beepBoop = function(userNumber){
+var beepBoop = function(userNumber,nameInput){
 
   numbersLoop = [];
 
@@ -8,8 +8,8 @@ var beepBoop = function(userNumber){
   }
 
   var newArray = numbersLoop.map(function(index) {
-    if (index % 3 == 0){
-      return "I'm sorry, Dave. I'm afraid I can't do that.";
+    if (index % 3 == 0 && index != 0){
+      return "I'm sorry " + nameInput + ",I'm afraid I can't do that.";
     } else if (index.includes('1')){
       return "Boop!";
     } else if (index.includes('0')){
@@ -22,13 +22,13 @@ var beepBoop = function(userNumber){
 return newArray
 }
 
-alert(beepBoop(10))
-
 //Front End Code
 $(document).ready(function(){
   $("#speakto").submit(function(event){
+    var nameInput = $("#nameInput").val();
     var input = $("#userInput").val();
-    $("#reply").text(beepBoop(input));
+    $(input).hide();
+    $("#reply").text(beepBoop(input,nameInput));
 
   event.preventDefault();
   });

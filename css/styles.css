@@ -2,3 +2,8 @@
   font-size: 25px;
   font-weight: bold;
 }
+button {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100px;
+}
