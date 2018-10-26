@@ -9,7 +9,7 @@ var beepBoop = function(userNumber,nameInput){
 
   var newArray = numbersLoop.map(function(index) {
     if (index % 3 == 0 && index != 0){
-      return "I'm sorry " + nameInput + ",I'm afraid I can't do that.";
+      return "I'm sorry " + nameInput + ",I'm afraid I can't do that...";
     } else if (index.includes('1')){
       return "Boop!";
     } else if (index.includes('0')){
@@ -24,7 +24,7 @@ return newArray
 
 //Front End Code
 $(document).ready(function(){
-  $("#speakto").submit(function(event){
+  $("#speakTo").submit(function(event){
     var nameInput = $("#nameInput").val();
     var input = $("#userInput").val();
     $(input).hide();
